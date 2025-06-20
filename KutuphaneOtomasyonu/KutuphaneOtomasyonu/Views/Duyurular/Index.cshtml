@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "Duyurular Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Duyurular Listesi</h2>
+
+<div style="margin-bottom:10px;">
+    <button id="btnEkle">Duyuru Ekle</button>
+    <button id="btnYenile">Yenile</button>
+    <button id="btnTopluSil" disabled>Seçilenleri Sil</button>
+</div>
+
+<table id="duyuruTable" border="1" cellpadding="5" cellspacing="0" style="width:100%;">
+    <thead>
+        <tr>
+            <th><input type="checkbox" id="selectAll" /></th>
+            <th>ID</th>
+            <th>Başlık</th>
+            <th>Duyuru</th>
+            <th>Açıklama</th>
+            <th>Tarih</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Duyurular buraya yüklenecek -->
+    </tbody>
+</table>
+
+<div id="resultMessage" style="margin-top:15px;"></div>
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function loadDuyurular() {
+            $.ajax({
+                url: '@Url.Action("DuyuruList", "Duyurular")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    if (response.success) {
+                        var tbody = $('#duyuruTable tbody');
+                        tbody.empty();
+                        $('#selectAll').prop('checked', false);
+                        $('#btnTopluSil').prop('disabled', true);
+
+                        $.each(response.data, function (index, duyuru) {
+                            var row = '<tr>' +
+                                '<td><input type="checkbox" class="selectItem" data-id="' + duyuru.Id + '" /></td>' +
+                                '<td>' + duyuru.Id + '</td>' +
+                                '<td>' + duyuru.Başlık + '</td>' +
+                                '<td>' + duyuru.Duyuru + '</td>' +
+                                '<td>' + duyuru.Acıklama + '</td>' +
+                                '<td>' + new Date(duyuru.Tarih).toLocaleDateString() + '</td>' +
+                                '<td>' +
+                                    '<button class="btnGuncelle" data-id="' + duyuru.Id + '">Güncelle</button> ' +
+                                    '<button class="btnSil" data-id="' + duyuru.Id + '">Sil</button>' +
+                                '</td>' +
+                                '</tr>';
+                            tbody.append(row);
+                        });
+                    } else {
+                        $('#resultMessage').css('color', 'red').text("Duyurular yüklenirken hata oluştu: " + response.message);
+                    }
+                },
+                error: function () {
+                    $('#resultMessage').css('color', 'red').text("Sunucuya bağlanırken hata oluştu.");
+                }
+            });
+        }
+
+        function duyuruSil(id) {
+            if (!confirm("Bu duyuruyu silmek istediğinize emin misiniz?")) return;
+
+            $.ajax({
+                url: '@Url.Action("DuyuruSil", "Duyurular")',
+                type: 'POST',
+                dataType: 'json',
+                data: { id: id },
+                success: function (response) {
+                    if (response.success) {
+                        $('#resultMessage').css('color', 'green').text(response.message);
+                        loadDuyurular();
+                    } else {
+                        $('#resultMessage').css('color', 'red').text(response.message);
+                    }
+                },
+                error: function () {
+                    $('#resultMessage').css('color', 'red').text("Silme işlemi sırasında hata oluştu.");
+                }
+            });
+        }
+
+        function topluSil(ids) {
+            if (!confirm(ids.length + " duyuruyu silmek istediğinize emin misiniz?")) return;
+
+            $.ajax({
+                url: '@Url.Action("TopluSil", "Duyurular")',
+                type: 'POST',
+                dataType: 'json',
+                traditional: true,
+                data: { ids: ids },
+                success: function (response) {
+                    if (response.success) {
+                        $('#resultMessage').css('color', 'green').text(response.message);
+                        loadDuyurular();
+                    } else {
+                        $('#resultMessage').css('color', 'red').text(response.message);
+                    }
+                },
+                error: function () {
+                    $('#resultMessage').css('color', 'red').text("Toplu silme işlemi sırasında hata oluştu.");
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            loadDuyurular();
+
+            $('#btnYenile').click(function () {
+                loadDuyurular();
+                $('#resultMessage').text('');
+            });
+
+            $('#btnEkle').click(function () {
+                window.location.href = '@Url.Action("DuyuruEkle", "Duyurular")';
+            });
+
+            $('#duyuruTable').on('click', '.btnSil', function () {
+                var id = $(this).data('id');
+                duyuruSil(id);
+            });
+
+            $('#duyuruTable').on('click', '.btnGuncelle', function () {
+                var id = $(this).data('id');
+                window.location.href = '@Url.Action("DuyuruDuzenle", "Duyurular")' + '?id=' + id;
+            });
+
+            $('#selectAll').change(function () {
+                var isChecked = $(this).is(':checked');
+                $('.selectItem').prop('checked', isChecked);
+                $('#btnTopluSil').prop('disabled', !isChecked);
+            });
+
+            $('#duyuruTable').on('change', '.selectItem', function () {
+                var anyChecked = $('.selectItem:checked').length > 0;
+                $('#btnTopluSil').prop('disabled', !anyChecked);
+
+                var allChecked = $('.selectItem').length === $('.selectItem:checked').length;
+                $('#selectAll').prop('checked', allChecked);
+            });
+
+            $('#btnTopluSil').click(function () {
+                var selectedIds = $('.selectItem:checked').map(function () {
+                    return $(this).data('id');
+                }).get();
+
+                if (selectedIds.length > 0) {
+                    topluSil(selectedIds);
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<KutuphaneOtomasyonuentities.model.Yayınevi>
+
+@{
+    ViewBag.Title = "Yayınevleri";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yayınevleri</h2>
+
+<p>
+    @Html.ActionLink("Yeni Yayınevi Ekle", "Ekle", "Yayınevi", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Adı</th>
+            <th>Adres</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Adı</td>
+                <td>@item.Adres</td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Guncelle", new { id = item.Id }, new { @class = "btn btn-sm btn-warning" })
+
+                    |
+
+                    @using (Html.BeginForm("Sil", "Yayınevi", new { id = item.Id }, FormMethod.Post, new { onsubmit = "return confirm('Silmek istediğinizden emin misiniz?');", style = "display:inline" }))
+                    {
+                        <button type="submit" class="btn btn-sm btn-danger">Sil</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

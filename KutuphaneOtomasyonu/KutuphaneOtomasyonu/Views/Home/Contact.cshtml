@@ -1,0 +1,70 @@
+﻿@model Kütüphaneotomasyonu.entities.Model.İletişim
+@{
+    Layout = "~/Views/Shared/_GenelLayout.cshtml";
+    ViewBag.Title = "Contact";
+}
+<div class=" container ">
+    <h3>İLETİŞİM</h3>
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Message"]
+        </div>
+    }
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <b>ADI SOYADI</b>
+            @Html.TextBoxFor(x => x.adsoyad, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.adsoyad, "", new { @class = "form-danger" })
+        </div>
+        <div class="form-group">
+            <b>EMAİL</b>
+            @Html.TextBoxFor(x => x.email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.email, "", new { @class = "form-danger" })
+        </div>
+        <div class="form-group">
+            <b>BAŞLIK</b>
+            @Html.TextBoxFor(x => x.baslık, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.baslık, "", new { @class = "form-danger" })
+        </div>
+        <div class="form-group">
+            <b>MESAJ</b>
+            @Html.TextBoxFor(x => x.mesaj, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.mesaj, "", new { @class = "form-danger" })
+        </div>
+        <div class="form-group">
+            <b>AÇIKLMA</b>
+            @Html.TextAreaFor(x => x.acıklama, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.acıklama, "", new { @class = "form-danger" })
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Gönder
+        </button>
+
+    }
+    <br />
+    <!-- Canvas elementi -->
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    @section Scripts {
+        <script src="~/Scripts/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                var canvas = document.getElementById('myCanvas');
+                if (canvas) {
+                    var context = canvas.getContext('2d');
+                    // Burada canvas ile ilgili diğer işlemleri yapabilirsiniz
+                    context.fillStyle = "blue";
+                    context.fillRect(0, 0, 100, 100); // Örnek bir mavi kare çizer
+                } else {
+                    console.error("Canvas element not found!");
+                }
+            });
+        </script>
+    }
+
+</div>
+

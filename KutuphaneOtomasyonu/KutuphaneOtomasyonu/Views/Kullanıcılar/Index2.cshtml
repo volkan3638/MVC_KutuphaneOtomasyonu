@@ -1,0 +1,58 @@
+﻿@model KutuphaneOtomasyonuentities.model.viewModel.KullanıcıRolViewModel
+
+@{
+    ViewBag.Title = "Kullanıcı Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mb-4">📋 Kullanıcı Listesi</h2>
+
+<table class="table table-striped table-hover table-bordered align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Kullanıcı Adı</th>
+            <th scope="col">Roller</th>
+            <th scope="col">Adı Soyadı</th>
+            <th scope="col">Telefon</th>
+            <th scope="col">Email</th>
+            <th scope="col">Kayıt Tarihi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kullanıcılar in Model.Kullanıcılar)
+        {
+            <tr>
+                <td>@kullanıcılar.Id</td>
+                <td class="fw-bold text-primary">@kullanıcılar.Kullanıcıadı</td>
+                <td>
+                    <ul class="list-unstyled mb-1">
+                        @foreach (var rol in kullanıcılar.Kullanıcırolleris)
+                        {
+                            <li class="d-flex align-items-center mb-2 gap-2">
+                                <span class="badge bg-secondary">@rol.Roller.rol</span>
+                                @Html.ActionLink("Düzenle", "Duzenle", "KullaniciRolleri", new { id = rol.Id }, new { @class = "btn btn-warning btn-sm" })
+                                @Html.ActionLink("Sil", "Sil", "KullaniciRolleri", new { id = rol.Id }, new { @class = "btn btn-danger btn-sm" })
+                            </li>
+                        }
+
+                        <li class="mt-2">
+                            @Html.ActionLink("Yeni Rol Ekle", "Ekle", "KullaniciRolleri", new { id = kullanıcılar.Id }, new { @class = "btn btn-success btn-sm" })
+                        </li>
+                    </ul>
+                </td>
+                <td>@kullanıcılar.adısoyadı</td>
+                <td>@kullanıcılar.telefon</td>
+                <td>@kullanıcılar.email</td>
+                <td>@kullanıcılar.kayıttarihi.ToString("dd.MM.yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="mt-4">
+    @Html.ActionLink("Yeni Kullanıcı Ekle", "Ekle", null, new { @class = "btn btn-primary" })
+</div>
+
+<link href="~/style.css" rel="stylesheet" />
+<script src="~/JavaScript.js"></script>

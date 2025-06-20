@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Duyurular Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+}
+
+<h2>Duyurular Listesi</h2>
+
+<button id="btnYenile">Yenile</button>
+
+<table id="duyuruTable" border="1" cellpadding="5" cellspacing="0" style="width:100%; margin-top:10px;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Başlık</th>
+            <th>İçerik</th>
+            <th>Tarih</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Duyurular buraya yüklenecek -->
+    </tbody>
+</table>
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function loadDuyurular() {
+            $.ajax({
+                url: '@Url.Action("DuyuruList", "Duyurular")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    if (response.success) {
+                        var tbody = $('#duyuruTable tbody');
+                        tbody.empty();
+
+                        $.each(response.data, function (index, duyuru) {
+                            var row = '<tr>' +
+                                '<td>' + duyuru.Id + '</td>' +
+                                '<td>' + duyuru.Başlık + '</td>' +
+                                '<td>' + duyuru.Duyuru + '</td>' +
+                                '<td>' + duyuru.Acıklama + '</td>' +
+                                '<td>' + new Date(duyuru.Tarih).toLocaleDateString() + '</td>' +
+                                '</tr>';
+                            tbody.append(row);
+                        });
+                    } else {
+                        alert("Duyurular yüklenirken hata oluştu: " + response.message);
+                    }
+                },
+                error: function () {
+                    alert("Sunucuya bağlanırken hata oluştu.");
+                }
+            });
+        }
+
+        // Sayfa yüklendiğinde duyuruları yükle
+        $(document).ready(function () {
+            loadDuyurular();
+
+            // Yenile butonuna tıklandığında duyuruları tekrar yükle
+            $('#btnYenile').click(function () {
+                loadDuyurular();
+            });
+        });
+    </script>
+}

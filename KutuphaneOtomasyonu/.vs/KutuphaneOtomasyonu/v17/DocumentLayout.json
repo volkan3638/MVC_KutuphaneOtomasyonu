@@ -1,0 +1,201 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|c:\\users\\volka\\source\\repos\\kutuphaneotomasyonu\\kutuphaneotomasyonu\\views\\\u0130statislikler\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|solutionrelative:kutuphaneotomasyonu\\views\\\u0130statislikler\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\kutuphaneotomasyonu\\controllers\\\u0130statisliklercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|solutionrelative:kutuphaneotomasyonu\\controllers\\\u0130statisliklercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\kutuphaneotomasyonu\\views\\uyeler\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|solutionrelative:kutuphaneotomasyonu\\views\\uyeler\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\kutuphaneotomasyonu\\controllers\\uyelercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|solutionrelative:kutuphaneotomasyonu\\controllers\\uyelercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\kutuphaneotomasyonu\\controllers\\kullanicirollericontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|solutionrelative:kutuphaneotomasyonu\\controllers\\kullanicirollericontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\kutuphaneotomasyonu\\views\\kullan\u0131c\u0131lar\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|solutionrelative:kutuphaneotomasyonu\\views\\kullan\u0131c\u0131lar\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\kutuphaneotomasyonu\\controllers\\kullan\u0131c\u0131larcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|solutionrelative:kutuphaneotomasyonu\\controllers\\kullan\u0131c\u0131larcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\kutuphaneotomasyonu\\controllers\\duyurularcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|solutionrelative:kutuphaneotomasyonu\\controllers\\duyurularcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\kutuphaneotomasyonu\\controllers\\emanetkitaplarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|solutionrelative:kutuphaneotomasyonu\\controllers\\emanetkitaplarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\kutuphaneotomasyonu\\views\\kitaplar\\detay.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|solutionrelative:kutuphaneotomasyonu\\views\\kitaplar\\detay.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\kutuphaneotomasyonu\\controllers\\kitaplarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7C2F6DE-4DEE-4A54-A442-751541D628B6}|KutuphaneOtomasyonu\\KutuphaneOtomasyonu.csproj|solutionrelative:kutuphaneotomasyonu\\controllers\\kitaplarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Views\\\u0130statislikler\\Index.cshtml",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyonu\\Views\\\u0130statislikler\\Index.cshtml",
+              "ToolTip": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Views\\\u0130statislikler\\Index.cshtml",
+              "RelativeToolTip": "KutuphaneOtomasyonu\\Views\\\u0130statislikler\\Index.cshtml",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAYwLEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T17:00:25.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "\u0130statisliklerController.cs",
+              "DocumentMoniker": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\\u0130statisliklerController.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyonu\\Controllers\\\u0130statisliklerController.cs",
+              "ToolTip": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\\u0130statisliklerController.cs",
+              "RelativeToolTip": "KutuphaneOtomasyonu\\Controllers\\\u0130statisliklerController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:59:50.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Views\\Uyeler\\Index.cshtml",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyonu\\Views\\Uyeler\\Index.cshtml",
+              "ToolTip": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Views\\Uyeler\\Index.cshtml",
+              "RelativeToolTip": "KutuphaneOtomasyonu\\Views\\Uyeler\\Index.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAUwDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T16:58:00.985Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UyelerController.cs",
+              "DocumentMoniker": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\UyelerController.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyonu\\Controllers\\UyelerController.cs",
+              "ToolTip": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\UyelerController.cs",
+              "RelativeToolTip": "KutuphaneOtomasyonu\\Controllers\\UyelerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:57:48.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "KullaniciRolleriController.cs",
+              "DocumentMoniker": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\KullaniciRolleriController.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyonu\\Controllers\\KullaniciRolleriController.cs",
+              "ToolTip": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\KullaniciRolleriController.cs",
+              "RelativeToolTip": "KutuphaneOtomasyonu\\Controllers\\KullaniciRolleriController.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:53:27.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Views\\Kullan\u0131c\u0131lar\\Index.cshtml",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyonu\\Views\\Kullan\u0131c\u0131lar\\Index.cshtml",
+              "ToolTip": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Views\\Kullan\u0131c\u0131lar\\Index.cshtml",
+              "RelativeToolTip": "KutuphaneOtomasyonu\\Views\\Kullan\u0131c\u0131lar\\Index.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAUwC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T16:51:42.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Kullan\u0131c\u0131larController.cs",
+              "DocumentMoniker": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\Kullan\u0131c\u0131larController.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyonu\\Controllers\\Kullan\u0131c\u0131larController.cs",
+              "ToolTip": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\Kullan\u0131c\u0131larController.cs",
+              "RelativeToolTip": "KutuphaneOtomasyonu\\Controllers\\Kullan\u0131c\u0131larController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwCkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:51:21.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DuyurularController.cs",
+              "DocumentMoniker": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\DuyurularController.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyonu\\Controllers\\DuyurularController.cs",
+              "ToolTip": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\DuyurularController.cs",
+              "RelativeToolTip": "KutuphaneOtomasyonu\\Controllers\\DuyurularController.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAwwHQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:45:31.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EmanetKitaplarController.cs",
+              "DocumentMoniker": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\EmanetKitaplarController.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyonu\\Controllers\\EmanetKitaplarController.cs",
+              "ToolTip": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\EmanetKitaplarController.cs",
+              "RelativeToolTip": "KutuphaneOtomasyonu\\Controllers\\EmanetKitaplarController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAwBoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:40:09.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Detay.cshtml",
+              "DocumentMoniker": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Views\\Kitaplar\\Detay.cshtml",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyonu\\Views\\Kitaplar\\Detay.cshtml",
+              "ToolTip": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Views\\Kitaplar\\Detay.cshtml",
+              "RelativeToolTip": "KutuphaneOtomasyonu\\Views\\Kitaplar\\Detay.cshtml",
+              "ViewState": "AgIAABkAAAAAAAAAAAAUwCMAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T16:37:34.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "KitaplarController.cs",
+              "DocumentMoniker": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\KitaplarController.cs",
+              "RelativeDocumentMoniker": "KutuphaneOtomasyonu\\Controllers\\KitaplarController.cs",
+              "ToolTip": "C:\\Users\\volka\\source\\repos\\KutuphaneOtomasyonu\\KutuphaneOtomasyonu\\Controllers\\KitaplarController.cs",
+              "RelativeToolTip": "KutuphaneOtomasyonu\\Controllers\\KitaplarController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAQwDwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:34:39.11Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

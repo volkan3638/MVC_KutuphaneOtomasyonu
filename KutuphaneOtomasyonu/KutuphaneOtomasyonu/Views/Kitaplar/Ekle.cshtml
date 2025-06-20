@@ -1,0 +1,81 @@
+﻿@model Kütüphaneotomasyonu.entities.Model.Kitaplar
+
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg">
+        <div class="ibox">
+            <div class="ibox-head">
+                Kitap Ekleme Sayfası
+            </div>
+            <div class="ibox-body">
+
+                @using (Html.BeginForm("Ekle", "Kitaplar", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(x => x.kitapturuId)
+                    @Html.DropDownListFor(x => x.kitapturuId, (SelectList)ViewBag.Liste, "Seçim Yapınız", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.kitapturuId, "", new { @class = "text-danger" })
+                </div>
+
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.BarkodId)
+                        @Html.TextBoxFor(x => x.BarkodId, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.BarkodId, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.Kitapadı)
+                        @Html.TextBoxFor(x => x.Kitapadı, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Kitapadı, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.yazarı)
+                        @Html.TextBoxFor(x => x.yazarı, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.yazarı, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.yayınevi)
+                        @Html.TextBoxFor(x => x.yayınevi, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.yayınevi, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.stokadedi)
+                        @Html.TextBoxFor(x => x.stokadedi, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.stokadedi, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.sayfasayısı)
+                        @Html.TextBoxFor(x => x.sayfasayısı, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.sayfasayısı, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.acıklama)
+                        @Html.TextAreaFor(x => x.acıklama, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.acıklama, "", new { @class = "text-danger" })
+                    </div>
+
+                  
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">
+                            Ekle
+                        </button>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,166 @@
+﻿@{
+    var context = new Kütüphaneotomasyonu.entities.Model.context.KutuphaneContext();
+    string kullanıcıadi = "", adısoyadı = "", rol = "";
+    if (User.Identity.IsAuthenticated)
+    {
+        var modelKullanıcı = context.kullanıcılars.FirstOrDefault(x => x.email == User.Identity.Name);
+        kullanıcıadi = modelKullanıcı?.Kullanıcıadı ?? "";
+        adısoyadı = modelKullanıcı?.adısoyadı ?? "";
+
+        var modelKullanıcıRol = context.kullanıcırolleris.Where(x => x.kullanıcıId == modelKullanıcı.Id).ToList();
+        foreach (var item in modelKullanıcıRol)
+        {
+            var modelrol = context.rollers.Where(x => x.Id == item.rolId).ToList();
+            foreach (var r in modelrol)
+            {
+                rol += r.rol + ",";
+            }
+        }
+
+        if (!string.IsNullOrEmpty(rol))
+        {
+            rol = rol.TrimEnd(',');
+        }
+    }
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <title>MVC Kütüphane Otomasyonu | Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles -->
+    <link href="~/AdminDashboard/admincast-master/html/dist/assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/AdminDashboard/admincast-master/html/dist/assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/AdminDashboard/admincast-master/html/dist/assets/vendors/themify-icons/css/themify-icons.css" rel="stylesheet" />
+    <link href="~/AdminDashboard/admincast-master/html/dist/assets/vendors/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
+    <link href="~/AdminDashboard/admincast-master/html/dist/assets/css/main.min.css" rel="stylesheet" />
+    <link href="~/AdminDashboard/admincast-master/html/dist/assets/css/colors/blue.css" rel="stylesheet" id="theme" />
+</head>
+
+<body class="fixed-navbar">
+    <div class="page-wrapper">
+        <!-- Header -->
+        <header class="header">
+            <div class="page-brand">
+                <a class="link" href="#">
+                    <span class="brand">@kullanıcıadi</span>
+                    <span class="brand-mini">K</span>
+                </a>
+            </div>
+            <div class="flexbox flex-1">
+                <ul class="nav navbar-toolbar">
+                    <li><a class="nav-link sidebar-toggler js-sidebar-toggler"><i class="ti-menu"></i></a></li>
+                    <li>
+                        <form class="navbar-search">
+                            <div class="rel">
+                                <span class="search-icon"><i class="ti-search"></i></span>
+                                <input class="form-control" placeholder="Aranacak...">
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+                <ul class="nav navbar-toolbar">
+                    <li class="dropdown dropdown-user">
+                        <a class="nav-link dropdown-toggle link" data-toggle="dropdown">
+                            <img src="~/AdminDashboard/admincast-master/html/dist/assets/img/admin-avatar.png" />
+                            <span>@kullanıcıadi</span><i class="fa fa-angle-down m-l-5"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            @{
+                                var userName = User.Identity.Name;
+                                var model = context.kullanıcılars.FirstOrDefault(x => x.email == userName);
+                                int Id = model != null ? model.Id : 0;
+                            }
+                            <li>
+                                <a class="dropdown-item" href="@Url.Action("Duzenle", "Kullanıcılar", new { id = Id })">
+                                    <i class="fa fa-user"></i> Profil
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/Kullanıcılar/Cıkıs">
+                                    <i class="fa fa-power-off"></i> Çıkış
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <nav class="page-sidebar" id="sidebar">
+            <div id="sidebar-collapse">
+                <div class="admin-block d-flex">
+                    <div><img src="~/AdminDashboard/admincast-master/html/dist/assets/img/admin-avatar.png" width="45px" /></div>
+                    <div class="admin-info">
+                        <div class="font-strong">@adısoyadı</div><small>@rol</small>
+                    </div>
+                </div>
+                <ul class="side-menu metismenu">
+                    <li><a class="active" href="/Kitaplar/Index"><i class="sidebar-item-icon fa fa-th-large"></i><span class="nav-label">Dashboard</span></a></li>
+                    <li class="heading">FEATURES</li>
+                    <li>
+                        <a href="javascript:;"><i class="sidebar-item-icon fa fa-bar-chart"></i><span class="nav-label"> İstatislikler</span><i class="fa fa-angle-left arrow"></i></a>
+                        <ul class="nav-2-level collapse">
+                            <li><a href="/İstatislikler/Index/">Analizler</a></li>
+                        </ul>
+                    </li>
+                    <li class="heading">Sayfalar</li>
+                    <li>
+                        <a href="javascript:;"><i class="sidebar-item-icon fa fa-file-text"></i><span class="nav-label">Sayfalar</span><i class="fa fa-angle-left arrow"></i></a>
+                        <ul class="nav-2-level collapse">
+                            <li>@Html.ActionLink("Kitap Türleri", "Index", "KitapTurleri")</li>
+                            <li>@Html.ActionLink("Kitaplar", "Index", "Kitaplar")</li>
+                            <li>@Html.ActionLink("Emanet Kitaplar", "Index", "EmanetKitaplar")</li>
+                            <li>@Html.ActionLink("Duyurular", "Index", "Duyurular")</li>
+                            <li>@Html.ActionLink("Kullanıcılar", "Index", "Kullanıcılar")</li>
+                            <li>@Html.ActionLink("Roller", "Index", "Roller")</li>
+                            <li>@Html.ActionLink("Üyeler", "Index", "Uyeler")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Content -->
+        <div class="content-wrapper">
+            <div class="page-content fade-in-up">
+                @RenderBody()
+                <style>
+                    .visitors-table tbody tr td:last-child {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .visitors-table .progress {
+                        flex: 1;
+                    }
+
+                    .visitors-table .progress-parcent {
+                        text-align: right;
+                        margin-left: 10px;
+                    }
+                </style>
+            </div>
+            <footer class="page-footer">
+                <div class="font-13">2025 © <b>MVC Kütüphane Otomasyonu</b> - Tüm Haklar Saklıdır.</div>
+                <div class="to-top"><i class="fa fa-angle-double-up"></i></div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="~/AdminDashboard/admincast-master/html/dist/assets/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="~/AdminDashboard/admincast-master/html/dist/assets/vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/AdminDashboard/admincast-master/html/dist/assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/AdminDashboard/admincast-master/html/dist/assets/vendors/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="~/AdminDashboard/admincast-master/html/dist/assets/vendors/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/AdminDashboard/admincast-master/html/dist/assets/js/app.min.js"></script>
+    <script src="~/AdminDashboard/admincast-master/html/dist/assets/js/scripts/dashboard_1_demo.js"></script>
+
+    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

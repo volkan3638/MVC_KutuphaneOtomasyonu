@@ -1,0 +1,42 @@
+﻿@model Kütüphaneotomasyonu.entities.Model.EmanetKitaplar
+
+@{
+    ViewBag.Title = "EmanetKitapVer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Emanet Kitap Verme</h2>
+
+@using (Html.BeginForm("EmanetKitapVer", "EmanetKitaplar", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.DisplayNameFor(m => m.uyeler.adısoyadı)
+        @Html.DropDownListFor(m => m.UyeId, (SelectList)ViewBag.UyeListe, "~Seçim Yapınız~", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.UyeId, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.DisplayNameFor(m => m.Kitaplar.Kitapadı)
+        @Html.DropDownListFor(m => m.KitapId, (SelectList)ViewBag.KitapListe, "~Seçim Yapınız~", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.KitapId, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.DisplayNameFor(m => m.kitapsayiyi)
+        @Html.TextBoxFor(m => m.kitapsayiyi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.kitapsayiyi, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.DisplayNameFor(m => m.Kitapaldıgıtarih)
+        @Html.TextBoxFor(m => m.Kitapaldıgıtarih, new { @class = "form-control", type = "datetime-local" })
+        @Html.ValidationMessageFor(m => m.Kitapaldıgıtarih, "", new { @class = "text-danger" })
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-success">Onayla</button>
+    @Html.ActionLink("İptal", "Index", null, new { @class = "btn btn-default" })
+}

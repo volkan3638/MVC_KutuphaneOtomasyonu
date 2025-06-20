@@ -1,0 +1,30 @@
+﻿@model List<Kütüphaneotomasyonu.entities.Model.Hakkımızda>
+
+@{
+    Layout = "~/Views/Shared/_GenelLayout.cshtml";
+    ViewBag.Title = "Hakkımızda";
+}
+
+<main aria-labelledby="title">
+    <h2 id="title">Hakkımızda</h2>
+
+    <div class="mt-4">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Başlık</th>
+                    <th>Açıklama</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.icerik</td>
+                        <td>@item.acıklama</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>

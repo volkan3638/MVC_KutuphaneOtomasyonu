@@ -1,0 +1,41 @@
+﻿@model List<Kütüphaneotomasyonu.entities.Model.Kullanıcırolleri>
+
+@{
+    ViewBag.Title = "Rol Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Rol Listesi</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>KullanıcıId</th>
+            <th>Rol Id</th>
+            <th>Roller</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.kullanıcıId</td>
+                <td>@item.rolId</td>
+                <td>@item.Roller.rol</td>
+               
+               
+                <td>
+                  
+                    @Html.ActionLink("Sil", "Sil", new { id = item.Id }, new { @class = "btn btn-sm btn-danger", onclick = "return confirm('Silmek istediğinizden emin misiniz?');" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    @Html.ActionLink("Yeni Rol Ekle", "Index2","Kullanıcılar", new { kullaniciId = Model.FirstOrDefault()?.kullanıcıId ?? 0 }, new { @class = "btn btn-primary" })
+

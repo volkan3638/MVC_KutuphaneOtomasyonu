@@ -1,0 +1,42 @@
+﻿@model List<Kütüphaneotomasyonu.entities.Model.Roller>
+
+@{
+    ViewBag.Title = "Roller";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kitap Listesi</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Rol</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.rol</td>
+                
+                
+                <td>
+
+                    @Html.ActionLink("Düzenle", "Duzenle", "Roller", new { id = item.Id }, new { @class = "btn btn-sm btn-warning" }) |
+                    @using (Html.BeginForm("Sil", "Roller", new { id = item.Id }, FormMethod.Post, new { onsubmit = "return confirm('Silmek istediğinizden emin misiniz?');", style = "display:inline" }))
+                    {
+                        <button type="submit" class="btn btn-sm btn-danger">Sil</button>
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    @Html.ActionLink("Yeni Rol Ekle", "Ekle","Roller", null, new { @class = "btn btn-primary" })
+</p>

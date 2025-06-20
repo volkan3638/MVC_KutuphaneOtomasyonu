@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "~/Views/Shared/_GenelLayout.cshtml";
+    ViewBag.Title = "Ana Sayfa";
+}
+
+<!-- Canvas elementi -->
+<canvas id="myCanvas" width="100" height="100"></canvas>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var canvas = document.getElementById('myCanvas');
+            if (canvas) {
+                var context = canvas.getContext('2d');
+                context.fillStyle = "blue";
+                context.fillRect(0, 0, 100, 100); // Mavi bir kare çizilir
+            } else {
+                console.error("Canvas elementi bulunamadı!");
+            }
+        });
+    </script>
+}
+
+<main>
+    <section class="row" aria-labelledby="mainTitle">
+        <h1 id="mainTitle">Kütüphane Otomasyon Sistemine Hoş Geldiniz</h1>
+        <p>
+            Bu sistem, kütüphane yönetimini dijital ortamda kolay ve hızlı bir şekilde yürütmenizi sağlar.<br />
+            Kitap kayıtlarını yönetebilir, üyelik işlemlerini gerçekleştirebilir,<br />
+            emanet süreçlerini takip edebilir ve kapsamlı raporlar oluşturabilirsiniz.<br />
+            Kullanıcı yetkilendirmesi sayesinde işlemler güvenli şekilde yürütülür.<br />
+            Her türlü yardım için sistem yöneticinize başvurabilirsiniz.
+        </p>
+    </section>
+
+    <div class="row mt-4">
+        <section class="col-md-4" aria-labelledby="kitapTitle">
+            <h2 id="kitapTitle">Kitap İşlemleri</h2>
+            <p>
+                Kütüphanedeki tüm kitapları listeleyebilir, yeni kitap ekleyebilir,<br />
+                mevcut kitap bilgilerini güncelleyebilir veya silebilirsiniz.
+            </p>
+        </section>
+
+        <section class="col-md-4" aria-labelledby="uyeTitle">
+            <h2 id="uyeTitle">Üye Yönetimi</h2>
+            <p>
+                Sisteme yeni üyeler kaydedebilir, mevcut üyelerin bilgilerini düzenleyebilir<br />
+                ve üye listesi üzerinden arama yaparak kolayca erişim sağlayabilirsiniz.
+            </p>
+        </section>
+
+        <section class="col-md-4" aria-labelledby="emanetTitle">
+            <h2 id="emanetTitle">Emanet ve Raporlama</h2>
+            <p>
+                Ödünç verilen kitapların takibini yapabilir, iade işlemlerini kolayca gerçekleştirebilir<br />
+                ve tüm emanet bilgilerini PDF formatında dışa aktararak arşivleyebilirsiniz.
+            </p>
+        </section>
+    </div>
+</main>

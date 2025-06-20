@@ -1,0 +1,63 @@
+﻿@model List<Kütüphaneotomasyonu.entities.Model.EmanetKitaplar>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    string kitapAdiFiltre = Request.QueryString["kitapAdi"];
+    string uyeAdiFiltre = Request.QueryString["uyeAdi"];
+}
+
+<form method="get" class="mb-3">
+    <div class="input-group mb-2">
+        <input type="text" name="kitapAdi" value="@kitapAdiFiltre" class="form-control" placeholder="Kitap adına göre ara..." />
+    </div>
+    <div class="input-group mb-2">
+        <input type="text" name="uyeAdi" value="@uyeAdiFiltre" class="form-control" placeholder="Üye adına göre ara..." />
+    </div>
+    <div class="input-group-append">
+        <button type="submit" class="btn btn-primary">Ara</button>
+    </div>
+</form>
+<h2>Emanet Kitap Listesi</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Üye</th>
+            <th>Kitap</th>
+            <th>Kitap Sayısı</th>
+            <th>Aldığı Tarih</th>
+            <th>İade Tarihi</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>  @Html.DisplayFor(x => item.Id)</td>
+                <td>  @Html.DisplayFor(x => item.uyeler.adısoyadı)</td>
+                <td>  @Html.DisplayFor(x => item.Kitaplar.Kitapadı)</td>
+                <td>  @Html.DisplayFor(x => item.kitapsayiyi)</td>
+                <td>  @Html.DisplayFor(x => item.Kitapaldıgıtarih)</td>
+                <td>  @Html.DisplayFor(x => item.kitapiadetarihi)</td>
+
+
+
+
+
+                <td>
+
+                    @Html.ActionLink("Düzenle", "Duzenle", new { id = item.Id }, new { @class = "btn btn-sm btn-warning" }) |
+                    @Html.ActionLink("Sil", "Sil", "EmanetKitaplar", new { id = item.Id }, new { @class = "btn btn-sm btn-danger", onclick = "return confirm('Silmek istediğinizden emin misiniz?');" })
+                    @Html.ActionLink("Teslim Al", "TeslimAl", "EmanetKitaplar", new { id = item.Id }, new { @class = "btn btn-sm btn-primary", onclick = "return confirm('Kitap(lar) iade Edilsin mi ?');" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    @Html.ActionLink("Emanet Kitap Ver", "EmanetKitapVer", null, new { @class = "btn btn-primary" })---@Html.ActionLink("Excel", "exeleaktar", "İstatislikler",null, new { @class = "btn btn-dark" })---
+    @Html.ActionLink("Yazdır ", "Yazdir", null, new { @class = "btn btn-primary" })
+</p> 

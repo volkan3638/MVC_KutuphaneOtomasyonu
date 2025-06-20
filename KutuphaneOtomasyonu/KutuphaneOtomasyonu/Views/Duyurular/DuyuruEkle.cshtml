@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Duyuru Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Duyuru Ekle</h2>
+
+<form id="duyuruForm">
+    <div>
+        <label for="Başlık">Başlık:</label><br />
+        <input type="text" id="Başlık" name="Başlık" required maxlength="200" />
+    </div>
+    <div>
+        <label for="Duyuru">İçerik:</label><br />
+        <textarea id="Duyuru" name="Duyuru" rows="4" cols="50" required maxlength="1000"></textarea>
+    </div>
+    <div>
+        <label for="Acıklama">Açıklama:</label><br />
+        <textarea id="Acıklama" name="Acıklama" rows="2" cols="50" maxlength="500"></textarea>
+    </div>
+    <div>
+        <label for="Tarih">Tarih:</label><br />
+        <input type="date" id="Tarih" name="Tarih" required />
+    </div>
+    <br />
+    <button type="submit">Kaydet</button>
+</form>
+
+<div id="resultMessage" style="margin-top:15px;"></div>
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#duyuruForm').submit(function (e) {
+                e.preventDefault();
+
+                var duyuruData = {
+                    Başlık: $('#Başlık').val(),
+                    Duyuru: $('#Duyuru').val(),
+                    Acıklama: $('#Acıklama').val(),
+                    Tarih: $('#Tarih').val()
+                };
+
+                $.ajax({
+                    url: '@Url.Action("DuyuruEkle", "Duyurular")',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: duyuruData,
+                    success: function (response) {
+                        if (response.success) {
+                            $('#resultMessage').css('color', 'green').text(response.message);
+                            $('#duyuruForm')[0].reset();
+                        } else {
+                            $('#resultMessage').css('color', 'red').text(response.message);
+                        }
+                    },
+                    error: function () {
+                        $('#resultMessage').css('color', 'red').text('Sunucuya bağlanırken hata oluştu.');
+                    }
+                });
+            });
+        });
+    </script>
+}

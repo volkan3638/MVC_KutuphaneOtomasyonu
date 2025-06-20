@@ -1,0 +1,69 @@
+﻿@model Kütüphaneotomasyonu.entities.Model.context.Duyurular
+
+@{
+    ViewBag.Title = "Duyuru Düzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Duyuru Düzenle</h2>
+
+<form id="duyuruForm">
+    @Html.HiddenFor(m => m.Id)
+
+    <div>
+        <label for="Başlık">Başlık:</label><br />
+        <input type="text" id="Başlık" name="Başlık" value="@Model.Başlık" required maxlength="200" />
+    </div>
+    <div>
+        <label for="Duyuru">İçerik:</label><br />
+        <textarea id="Duyuru" name="Duyuru" rows="4" cols="50" required maxlength="1000">@Model.Duyuru</textarea>
+    </div>
+    <div>
+        <label for="Acıklama">Açıklama:</label><br />
+        <textarea id="Acıklama" name="Acıklama" rows="2" cols="50" maxlength="500">@Model.Acıklama</textarea>
+    </div>
+    <div>
+        <label for="Tarih">Tarih:</label><br />
+        <input type="date" id="Tarih" name="Tarih" value="@Model.Tarih.ToString("yyyy-MM-dd")" required />
+    </div>
+    <br />
+    <button type="submit">Güncelle</button>
+</form>
+
+<div id="resultMessage" style="margin-top:15px;"></div>
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#duyuruForm').submit(function (e) {
+                e.preventDefault();
+
+                var duyuruData = {
+                    Id: '@Model.Id',
+                    Başlık: $('#Başlık').val(),
+                    Duyuru: $('#Duyuru').val(),
+                    Acıklama: $('#Acıklama').val(),
+                    Tarih: $('#Tarih').val()
+                };
+
+                $.ajax({
+                    url: '@Url.Action("DuyuruDuzenle", "Duyurular")',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: duyuruData,
+                    success: function (response) {
+                        if (response.success) {
+                            $('#resultMessage').css('color', 'green').text(response.message);
+                        } else {
+                            $('#resultMessage').css('color', 'red').text(response.message);
+                        }
+                    },
+                    error: function () {
+                        $('#resultMessage').css('color', 'red').text('Sunucuya bağlanırken hata oluştu.');
+                    }
+                });
+            });
+        });
+    </script>
+}

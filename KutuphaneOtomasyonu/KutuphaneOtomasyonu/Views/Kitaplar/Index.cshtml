@@ -1,0 +1,55 @@
+﻿@model List<Kütüphaneotomasyonu.entities.Model.Kitaplar>
+
+@{
+    ViewBag.Title = "Kitap Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kitap Listesi</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Barkod</th>
+            <th>Kitap Adı</th>
+            <th>Yazar</th>
+        
+            <th>Yayınevi</th>
+            <th>Tür</th>
+            <th>Stok</th>
+            <th>Sayfa</th>
+            <th>Ekleme Tarihi</th>
+            <th>Güncelleme</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.BarkodId</td>
+                <td>@item.Kitapadı</td>
+                <td>@item.yazarı</td>
+                
+                <td>@item.yayınevi</td>
+                <td>@item.KitapTürleri.Kitapturu</td>
+                <td>@item.stokadedi</td>
+                <td>@item.sayfasayısı</td>
+                <td>@item.eklenmetarihi.ToString("dd.MM.yyyy")</td>
+                <td>@item.guncellemetarihi.ToString("dd.MM.yyyy")</td>
+                <td>
+                    @Html.ActionLink("Detay", "Detay", new { id = item.Id }, new { @class = "btn btn-sm btn-info" }) |
+                    @Html.ActionLink("Düzenle", "Duzenle", new { id = item.Id }, new { @class = "btn btn-sm btn-warning" }) |
+                    @Html.ActionLink("Sil", "Sil", "Kitaplar", new { id = item.Id }, new { @class = "btn btn-sm btn-danger", onclick = "return confirm('Silmek istediğinize emin misiniz?');" })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    @Html.ActionLink("Yeni Kitap Ekle", "Ekle", null, new { @class = "btn btn-primary" })
+</p>

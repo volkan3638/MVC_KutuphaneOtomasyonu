@@ -1,0 +1,44 @@
+﻿@model Kütüphaneotomasyonu.entities.Model.context.Duyurular
+
+@{
+    ViewBag.Title = "Duyuru Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Duyuru Güncelle</h2>
+
+@using (Html.BeginForm("DuyuruGuncelle", "Duyurular", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+
+    <div>
+        @Html.LabelFor(m => m.Başlık)
+        @Html.TextBoxFor(m => m.Başlık, new { @required = "required" })
+        @Html.ValidationMessageFor(m => m.Başlık)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Duyuru)
+        @Html.TextAreaFor(m => m.Duyuru, new { @rows = 4, @cols = 50, @required = "required" })
+        @Html.ValidationMessageFor(m => m.Duyuru)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Tarih)
+        @Html.TextBoxFor(m => m.Tarih, "{0:yyyy-MM-dd}", new { type = "date", @required = "required" })
+        @Html.ValidationMessageFor(m => m.Tarih)
+    </div>
+
+    <br />
+    <button type="submit">Güncelle</button>
+}
+
+<div>
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div style="color:red;">
+            @Html.ValidationSummary()
+        </div>
+    }
+</div>

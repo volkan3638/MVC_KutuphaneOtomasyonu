@@ -1,0 +1,38 @@
+﻿@model List<Kütüphaneotomasyonu.entities.Model.Kullanıcırolleri>
+
+@{
+    ViewBag.Title = "Kullanıcı Rolleri Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kullanıcı Rolleri Listesi</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Kullanıcı</th>
+            <th>Rol</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.kullanıcıId</td>
+                    <td>@item.Roller.rol</td>  <!-- ? işareti null kontrolü -->
+                    <td> ... </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="4">Hiç rol bulunamadı.</td></tr>
+        }
+
+    </tbody>
+</table>

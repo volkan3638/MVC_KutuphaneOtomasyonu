@@ -1,0 +1,46 @@
+﻿@model List<Kütüphaneotomasyonu.entities.Model.Kullanıcılar>
+@{
+    ViewBag.Title = "Kullanıcı Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kullanıcı Listesi</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Kullanıcı</th>
+            <th>Adı Soyadı</th>
+            <th>Telefon</th>
+            <th>Email</th>
+            <th>Kayıt Tarihi</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Kullanıcıadı</td>
+                <td>@item.adısoyadı</td>
+                <td>@item.telefon</td>
+                <td>@item.email</td>
+                <td>@item.kayıttarihi</td>
+                
+
+                <td>
+                  
+                    @Html.ActionLink("Düzenle", "Duzenle", new { id = item.Id }, new { @class = "btn btn-sm btn-warning" }) |
+                    @Html.ActionLink("Sil", "Sil","Kullanıcılar" ,new { id = item.Id }, new { @class = "btn btn-sm btn-danger", onclick = "return confirm('Silmek istediğinizden emin misiniz?');" }) |
+                    @Html.ActionLink("Rolleri", "KRolleri", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" }) 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    @Html.ActionLink("Yeni Kullanıcı Ekle", "Ekle", null, new { @class = "btn btn-primary" })
+</p>

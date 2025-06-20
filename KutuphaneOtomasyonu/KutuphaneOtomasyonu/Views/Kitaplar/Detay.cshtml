@@ -1,0 +1,65 @@
+﻿@model Kütüphaneotomasyonu.entities.Model.Kitaplar
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg">
+        <div class="ibox">
+            <div class="ibox-head">
+                <b>@Html.DisplayFor(x => x.Id) nolu Kitap Bilgileri</b>
+            </div>
+            <div class="ibox-body">
+                <div class="form-group">
+                    <b>Kitap Türü :</b>
+                    @Html.DisplayFor(x => x.KitapTürleri.Kitapturu)
+                </div>
+                <div class="form-group">
+                    <b>Barkod :</b>
+                    @Html.DisplayFor(x => x.BarkodId)
+                </div>
+                <div class="form-group">
+                    <b>Kitap Adı :</b>
+                    @Html.DisplayFor(x => x.Kitapadı)
+                </div>
+                <div class="form-group">
+                    <b>Kitap Yazarı :</b>
+                    @Html.DisplayFor(x => x.yazarı)
+                </div>
+                <div class="form-group">
+                    <b>Yayın Evi :</b>
+                    @Html.DisplayFor(x => x.yayınevi)
+                </div>
+                <div class="form-group">
+                    <b>Stok Adedi :</b>
+                    @Html.DisplayFor(x => x.stokadedi)
+                </div>
+                <div class="form-group">
+                    <b>Sayfa Sayısı :</b>
+                    @Html.DisplayFor(x => x.sayfasayısı)
+                </div>
+                <div class="form-group">
+                    <b>Açıklama :</b>
+                    @Html.DisplayFor(x => x.acıklama)
+                </div><div class="form-group">
+                    <b>Eklenme Tarihi :</b>
+                    @Html.DisplayFor(x => x.eklenmetarihi)
+                </div>
+            </div><div class="form-group">
+                <b>Güncellenme Tarihi :</b>
+                @Html.DisplayFor(x => x.guncellemetarihi)
+            </div>
+        </div>
+        <div class="form-group">
+            <b>Silindi Mi :</b>
+            @Html.CheckBoxFor(x => x.silindimi)
+        </div>
+        <div class="form-group">
+            @Html.ActionLink("Kitaplarlar", "Index", null, new { @class = "btn btn-info" }) |
+
+        </div>
+    </div>
+</div>
+    </div>
+</div>
